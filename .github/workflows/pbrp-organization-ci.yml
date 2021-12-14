@@ -33,24 +33,33 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-       - name: Cleaning Up Runner
-         uses: rokibhasansagar/slimhub_actions@main
-
        - name: Auto Adapt Manifest
-         run: |
-              echo "MANIFEST=https://pbrp-bot:$GH_SECRET_TOKEN@github.com/PitchBlackRecoveryProject/manifest -b android-11" >> $GITHUB_ENV
-
+         run: echo "MANIFEST=https://github.com/PitchBlackRecoveryProject/manifest_pb -b android-9.0" >> $GITHUB_ENV
        - name: Export Vars
          run: |
               if [[ ${BUILD_RELEASE_TYPE} == "TEST" ]]; then echo "TEST_BUILD=true"  >> $GITHUB_ENV;fi
               if [[ ${BUILD_RELEASE_TYPE} == "BETA" ]]; then echo "BETA_BUILD=true"  >> $GITHUB_ENV;fi
               if [[ ${BUILD_RELEASE_TYPE} == "OFFICIAL" ]]; then echo "PB_OFFICIAL=true"  >> $GITHUB_ENV;fi
-              git config --global user.email pitchblackrecovery@gmail.com
-              git config --global user.name pbrp-bot
-              echo "machine github.com login $GH_SECRET_TOKEN password x-oauth-basic" > $HOME/.netrc
+       - name: Checkout Cleaning Up Runner Repo
+         uses: actions/checkout@v2
+         with:
+           repository: PitchBlackRecoveryProject/Cleaner
+           ref: main
+           token: ${{ secrets.GH_BOT_TOKEN }}
+           path: .github/actions/Cleaner
+       - name: Cleaning
+         uses: ./.github/actions/Cleaner
+
+       - name: Checkout Recovery Compiler Repo
+         uses: actions/checkout@v2
+         with:
+           repository: PitchBlackRecoveryProject/Compiler
+           ref: production
+           token: ${{ secrets.GH_BOT_TOKEN }}
+           path: .github/actions/Compiler
 
        - name: Recovery Compilation
-         uses: PitchBlackRecoveryProject/Recovery-Compiler@production
+         uses: ./.github/actions/Compiler
        
        - name: Release Builds 
          run: |
