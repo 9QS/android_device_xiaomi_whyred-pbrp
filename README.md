@@ -6,8 +6,15 @@ For building PBRP for Xiaomi Redmi Note 5 Pro ONLY
 
 To compile
 
-. build/envsetup.sh && lunch omni_whyred-eng && make -j8 recoveryimage
+```
+$ mkdir pbrp && cd pbrp
 
+$ repo init -u https://github.com/PitchBlackRecoveryProject/manifest_pb --depth=1 -b android-12.1
+
+$ repo sync
+
+$ lunch pbrp_whyred-eng && mka recoveryimage
+```
 The Redmi Note 5 Pro (codenamed _"whyred"_) are high-end mid-range smartphones from Xiaomi.
 
 Xiaomi Redmi Note 5 Pro was announced and released in February 2018.
