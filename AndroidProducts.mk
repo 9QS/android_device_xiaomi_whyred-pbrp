@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_whyred.mk
+    $(LOCAL_DIR)/pbrp_whyred.mk
 
-COMMON_LUNCH_CHOICES := omni_whyred-eng
+COMMON_LUNCH_CHOICES := pbrp_whyred-eng
