@@ -13,6 +13,11 @@ $ repo init -u https://github.com/PitchBlackRecoveryProject/manifest_pb --depth=
 
 $ repo sync
 
+$ git clone https://github.com/9QS/android_device_whyred-pbrp -b android-12.1 device/xiaomi/whyred
+
+$ git clone https://github.com/Ancient-Project/android_kernel_xiaomi_whyred 
+# Optional but recommended
+
 $ lunch pbrp_whyred-eng && mka recoveryimage
 ```
 The Redmi Note 5 Pro (codenamed _"whyred"_) are high-end mid-range smartphones from Xiaomi.
