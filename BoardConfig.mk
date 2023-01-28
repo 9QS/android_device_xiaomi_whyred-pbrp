@@ -63,6 +63,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_PREBUILT_KERNEL := device/xiaomi/whyred/prebuilt/Image.gz-dtb
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_CONFIG := whyred_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm660
