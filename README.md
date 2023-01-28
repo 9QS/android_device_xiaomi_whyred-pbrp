@@ -1,5 +1,8 @@
-# android_device_xiaomi_whyred
-For building TWRP for Xiaomi Redmi Note 5 Pro ONLY
+# android_device_xiaomi_whyred-pbrp
+
+PBRP 4.0 for Xiaomi Redmi Note 5
+
+For building PBRP for Xiaomi Redmi Note 5 Pro ONLY
 
 To compile
 
