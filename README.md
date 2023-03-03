@@ -2,7 +2,7 @@
 
 PBRP 4.0 for Xiaomi Redmi Note 5
 
-For building PBRP for Xiaomi Redmi Note 5 Pro ONLY
+For building PBRP for Xiaomi Redmi Note 5 Global/Pro
 
 To compile
 
