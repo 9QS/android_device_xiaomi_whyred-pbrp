@@ -23,6 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+ALLOW_MISSING_DEPENDENCIES=true
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
